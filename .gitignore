@@ -1,13 +1,24 @@
-.env
+# Core files
 node_modules/
 logs/
+dist/
+coverage/
+
+# Secrets & credentials
+.env
+*.env
+.tok*
+storage.json
+pw-profile/
+tgstarstable-*.json
+
+# Database
 db/*.sqlite
 db/*.db
 db/*.db-journal
-.pw_profile/
-node_modules/
-.env
+
+# Lock files
+*.lock
+
+# OS files
 .DS_Store
-dist/
-coverage/
-logs/

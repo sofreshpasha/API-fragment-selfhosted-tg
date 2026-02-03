@@ -5,14 +5,42 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "dev": "node --watch app.js"
+    "dev": "node --watch app.js",
+    "tg:login": "node scripts/tg-login.mjs",
+    "stars:dry": "node providers/stars-gram.mjs dry",
+    "stars:send": "STARS_DRY_RUN=0 node providers/stars-gram.mjs send",
+    "stars:balance": "node providers/stars-gram.mjs balance",
+    "tg:whois": "node providers/stars-gram.mjs whois",
+    "tg:dry": "node providers/stars-gram.mjs dry",
+    "tg:send": "node providers/stars-gram.mjs send",
+    "buy:dry": "node scripts/buy.js dry",
+    "buy:send": "FRAGMENT_DRY_RUN=0 node scripts/buy.js send",
+    "boc:extract": "node scripts/extract-boc.js",
+    "bridge:decode": "node scripts/decode-bridge.js",
+    "open": "node -r dotenv/config ./scripts/open.js",
+    "buy": "node -r dotenv/config ./scripts/buy.js",
+    "health": "node -r dotenv/config ./scripts/health.js",
+    "start": "node index.js"
   },
   "dependencies": {
+    "@orbs-network/ton-access": "^2.3.3",
+    "@ton-api/client": "^0.4.0",
+    "@ton/core": "^0.61.0",
+    "@ton/crypto": "^3.3.0",
+    "@ton/ton": "^15.3.1",
     "better-sqlite3": "^9.6.0",
     "dayjs": "^1.11.13",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.6.1",
     "express": "^4.19.2",
+    "googleapis": "^160.0.0",
+    "input": "^1.0.1",
+    "nanoid": "^5.1.5",
+    "pino": "^9.11.0",
+    "pino-pretty": "^13.1.1",
+    "playwright": "^1.55.0",
     "telegraf": "^4.16.3",
-    "uuid": "^9.0.1"
+    "telegram": "github:gram-js/gramjs",
+    "uuid": "^9.0.1",
+    "yargs": "^17.7.2"
   }
 }
